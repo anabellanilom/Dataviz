@@ -1,0 +1,7 @@
+---
+title: "Data viz"
+format: html
+editor: visual
+---
+
+Data viz es un sitio dedicado exclusivamente a la exploración de datos visuales con R. El sitio busca recopilar bibliografía sobre visualización de datos, así como otros sitios web útiles para la exploración visual de datos y creación con R.  
