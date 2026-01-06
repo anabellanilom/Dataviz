@@ -1,0 +1,7 @@
+---
+title: "Dataviz eng"
+format: html
+editor: visual
+---
+
+## Exploring data with R

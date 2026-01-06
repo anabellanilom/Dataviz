@@ -11,20 +11,27 @@
     "href": "dataviz.html",
     "title": "dataviz",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "En esta sección muestro algunos gráficos realizados para explorar datos.En esta ocasión provenientes de:\n\nNuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/"
   },
   {
-    "objectID": "dataviz.html#quarto",
-    "href": "dataviz.html#quarto",
+    "objectID": "dataviz.html#exploración-de-datos-con-r.",
+    "href": "dataviz.html#exploración-de-datos-con-r.",
     "title": "dataviz",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "En esta sección muestro algunos gráficos realizados para explorar datos.En esta ocasión provenientes de:\n\nNuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/"
   },
   {
-    "objectID": "dataviz.html#running-code",
-    "href": "dataviz.html#running-code",
+    "objectID": "dataviz.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
+    "href": "dataviz.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
     "title": "dataviz",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "Representación de las mujeres en los gabinetes del mundo.",
+    "text": "Representación de las mujeres en los gabinetes del mundo.\n\n\n\n\n\n\n\n\nEstadísticas descriptivas de representación de ministras en el período 1966 a 2023\n\n\nRegión completa en todo el período\n\n\nTotal Ministras\nCargos totales (suma)\nProporción de ministras en todo el período\nPromedio país-año\nMediana país-año\nIQR país-año\nN país-año\n\n\n\n\n2,622\n21,345\n12.3%\n10.5%\n6.7%\n17.2%\n1,044\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov - dataset\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
+  },
+  {
+    "objectID": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
+    "href": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
+    "title": "dataviz",
+    "section": "Porcentaje de ministras en América Latina. 1980-2023",
+    "text": "Porcentaje de ministras en América Latina. 1980-2023\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset\n\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
   }
 ]

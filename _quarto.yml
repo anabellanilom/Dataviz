@@ -10,6 +10,7 @@ website:
     left:
       - href: index.qmd
       - href: dataviz.qmd
+      - href: biblio.qmd
     right:
       - icon: github
         href: https://github.com/anabellanilom
