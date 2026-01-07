@@ -14,12 +14,14 @@ website:
     right:
       - icon: github
         href: https://github.com/anabellanilom
-      - text: "{< ai google-scholar >}"
+      - text: "{{< ai google-scholar >}}"
         href: "https://scholar.google.com/citations?user=KLz7F4IAAAAJ&hl=es"
+        aria-label: Google Scholar
         target: _blank
         rel: me
       - text: "{{< ai orcid >}}"
         href: "https://orcid.org/0000-0001-7394-8589"
+        aria-label: ORCID
         target: _blank
         rel: me
       - icon: linkedin
@@ -28,7 +30,8 @@ website:
         rel: me
       - icon: envelope
         href: mailto:anabella.anilom@gmail.com
-
+        navbar:
+ 
   twitter-card:
     card-style: summary_large_image
     image: "images/social-card.png"
