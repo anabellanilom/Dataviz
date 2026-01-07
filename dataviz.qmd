@@ -25,9 +25,8 @@ library(stringr)
 library(gt)
 library(ggplot2)
 library(paletteer)
-library(gander)
 library(ellmer)
-library(usethis)
+
 
 ## Leer base whogov
 
@@ -220,7 +219,7 @@ p <- ggplot(df, aes(x = year, y = proporcion)) +
   labs(
     title = "Porcentaje de ministras en los gabinetes de 18 países de América Latina",
     subtitle = "1966–2023",
-    x = "Año", y = "Proporción"
+    x = "Año", y = "Porcentaje de ministras"
   ) +
   theme_minimal()
 
@@ -232,12 +231,6 @@ girafe_options(
   opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
   opts_zoom(min = 1, max = 5)
 )
-
-
-
-
-
-
 
 
 ```
@@ -325,9 +318,9 @@ base_pa %>%
     color = "black"
   ) +
   labs(
-    title = "Distribución de la proporción de mujeres por década",
+    title = "Distribución del porcentaje promedio de mujeres en los gabinetes de América Latina por década",
     x = "Década",
-    y = "Proporción de mujeres"
+    y = "Porcentaje promedio de mujeres"
   ) +
   scale_y_continuous(labels = percent_format(accuracy = 1)) +
   guides(fill = guide_none(),
