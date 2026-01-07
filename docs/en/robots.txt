@@ -1,1 +1,1 @@
-Sitemap: https://anabellanilom.github.io/Dataviz/en/sitemap.xml
+Sitemap: /en/sitemap.xml

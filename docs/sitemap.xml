@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://anabellanilom.github.io/Dataviz/en/index.html</loc>
+    <loc>/en/index.html</loc>
     <lastmod>2026-01-07T14:10:38.831Z</lastmod>
   </url>
   <url>
-    <loc>https://anabellanilom.github.io/Dataviz/en/biblio.html</loc>
+    <loc>/en/biblio.html</loc>
     <lastmod>2026-01-07T18:36:38.225Z</lastmod>
   </url>
   <url>
-    <loc>https://anabellanilom.github.io/Dataviz/en/dataviz.html</loc>
-    <lastmod>2026-01-07T19:00:08.652Z</lastmod>
+    <loc>/en/dataviz.html</loc>
+    <lastmod>2026-01-07T22:36:18.143Z</lastmod>
   </url>
   <url>
     <loc>https://anabellanilom.github.io/Dataviz/index.html</loc>
@@ -22,6 +22,6 @@
   </url>
   <url>
     <loc>https://anabellanilom.github.io/Dataviz/dataviz.html</loc>
-    <lastmod>2026-01-07T19:09:22.889Z</lastmod>
+    <lastmod>2026-01-07T22:38:22.752Z</lastmod>
   </url>
 </urlset>
