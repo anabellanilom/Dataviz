@@ -1,5 +1,5 @@
 ---
-title: "dataviz"
+title: "Exploración"
 format: html
 editor: visual
 ---
