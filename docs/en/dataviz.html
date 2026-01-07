@@ -126,6 +126,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
 <li><a href="#exploring-data-with-r" id="toc-exploring-data-with-r" class="nav-link active" data-scroll-target="#exploring-data-with-r">Exploring data with R</a></li>
+  <li><a href="#exploraci%C3%B3n-de-datos-sobre-representaci%C3%B3n-de-g%C3%A9nero-en-los-gabinetes." id="toc-exploración-de-datos-sobre-representación-de-género-en-los-gabinetes." class="nav-link" data-scroll-target="#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.">Exploración de datos sobre representación de género en los gabinetes.</a></li>
+  <li><a href="#representaci%C3%B3n-de-las-mujeres-en-los-gabinetes-del-mundo." id="toc-representación-de-las-mujeres-en-los-gabinetes-del-mundo." class="nav-link" data-scroll-target="#representación-de-las-mujeres-en-los-gabinetes-del-mundo.">Representación de las mujeres en los gabinetes del mundo.</a></li>
   </ul></nav>
 </div>
 <!-- main -->
@@ -145,6 +147,494 @@ ul.task-list li input[type="checkbox"] {
 
 
 </header><section id="exploring-data-with-r" class="level2"><h2 class="anchored" data-anchor-id="exploring-data-with-r">Exploring data with R</h2>
+</section><section id="exploración-de-datos-sobre-representación-de-género-en-los-gabinetes." class="level2"><h2 class="anchored" data-anchor-id="exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.">Exploración de datos sobre representación de género en los gabinetes.</h2>
+<ul>
+<li>Nuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de <a href="https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/" class="uri">https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/</a>
+</li>
+</ul></section><section id="representación-de-las-mujeres-en-los-gabinetes-del-mundo." class="level2"><h2 class="anchored" data-anchor-id="representación-de-las-mujeres-en-los-gabinetes-del-mundo.">Representación de las mujeres en los gabinetes del mundo.</h2>
+<div class="cell" title="Estadísticas descriptivas de ministras en el período 1966 a 2023">
+<div class="cell-output-display">
+<div id="moeokfqkut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#moeokfqkut table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#moeokfqkut thead, #moeokfqkut tbody, #moeokfqkut tfoot, #moeokfqkut tr, #moeokfqkut td, #moeokfqkut th {
+  border-style: none;
+}
+
+#moeokfqkut p {
+  margin: 0;
+  padding: 0;
+}
+
+#moeokfqkut .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#moeokfqkut .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#moeokfqkut .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#moeokfqkut .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#moeokfqkut .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#moeokfqkut .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#moeokfqkut .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#moeokfqkut .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#moeokfqkut .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#moeokfqkut .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#moeokfqkut .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#moeokfqkut .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#moeokfqkut .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#moeokfqkut .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#moeokfqkut .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#moeokfqkut .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#moeokfqkut .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#moeokfqkut .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#moeokfqkut .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#moeokfqkut .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#moeokfqkut .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#moeokfqkut .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#moeokfqkut .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#moeokfqkut .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#moeokfqkut .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#moeokfqkut .gt_left {
+  text-align: left;
+}
+
+#moeokfqkut .gt_center {
+  text-align: center;
+}
+
+#moeokfqkut .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#moeokfqkut .gt_font_normal {
+  font-weight: normal;
+}
+
+#moeokfqkut .gt_font_bold {
+  font-weight: bold;
+}
+
+#moeokfqkut .gt_font_italic {
+  font-style: italic;
+}
+
+#moeokfqkut .gt_super {
+  font-size: 65%;
+}
+
+#moeokfqkut .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#moeokfqkut .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#moeokfqkut .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#moeokfqkut .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#moeokfqkut .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#moeokfqkut .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#moeokfqkut .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#moeokfqkut .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#moeokfqkut div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal"><strong>Estadísticas descriptivas de representación de ministras en el período 1966 a 2023</strong></td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Región completa en todo el período</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="ministras_total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Ministras</th>
+<th id="cargos_totales" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Cargos totales (suma)</th>
+<th id="prop_ministras" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Proporción de ministras en todo el período</th>
+<th id="prom_pa" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Promedio país-año</th>
+<th id="mediana_pa" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mediana país-año</th>
+<th id="iqr_pa" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">IQR país-año</th>
+<th id="n_pais_anio" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">N país-año</th>
+</tr>
+</thead>
+<tbody class="gt_table_body"><tr class="odd">
+<td class="gt_row gt_right" headers="ministras_total">2,622</td>
+<td class="gt_row gt_right" headers="cargos_totales">21,345</td>
+<td class="gt_row gt_right" headers="prop_ministras">12.3%</td>
+<td class="gt_row gt_right" headers="prom_pa">10.5%</td>
+<td class="gt_row gt_right" headers="mediana_pa">6.7%</td>
+<td class="gt_row gt_right" headers="iqr_pa">17.2%</td>
+<td class="gt_row gt_right" headers="n_pais_anio">1,044</td>
+</tr></tbody>
+</table>
+</div>
+<p>Fuente: Elaboración propia con datos de whogov - dataset</p>
+</div>
+</div>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
