@@ -1,0 +1,7 @@
+---
+title: "Biblio"
+format: html
+editor: visual
+---
+
+## Bibliografía sobre visualización de datos con R.
