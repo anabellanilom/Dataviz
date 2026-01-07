@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 website:
-  title: "Anabella Molina"
-  site-url: https://anabellanilom.github.io
+  title: "Dataviz Anilom"
+  site-url: https://anabellanilom.github.io/Dataviz/ 
 
   navbar:
     left:
