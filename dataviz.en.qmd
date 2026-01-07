@@ -58,7 +58,7 @@ setdiff(codigos, unique(WhoGovData$country_isocode))
 ```
 
 ```{r}
-#| echo: true
+#| echo: false 
 #| warning: false
 #| include: false
 

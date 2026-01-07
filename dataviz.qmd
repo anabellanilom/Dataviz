@@ -104,7 +104,6 @@ base_pa <- AmericaLatina %>%
 ```
 
 ```{r}
-```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
 #| echo: false
 #| warning: false
@@ -141,7 +140,7 @@ n_pais_anio     = "N país-año"
 fmt_number(columns = c(ministras_total, cargos_totales, n_pais_anio), decimals = 0) %>%
 fmt_percent(columns = c(prop_ministras, prom_pa, mediana_pa, iqr_pa), decimals = 1) %>%
 tab_header(title = md("**Estadísticas descriptivas de representación de ministras en el período 1966 a 2023**"), subtitle = " Región completa en todo el período")
-```
+
 ```
 
 ```{r}
