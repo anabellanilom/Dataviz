@@ -4,4 +4,8 @@ format: html
 editor: visual
 ---
 
-Data viz es un sitio dedicado exclusivamente a la exploración de datos visuales con R. El sitio busca recopilar bibliografía sobre visualización de datos, así como otros sitios web útiles para la exploración visual de datos y creación con R.  
+##¿Qué es Data Viz? 
+
+Data Viz es un sitio creado por mí para explorar visualmente datos públicos, con foco en Argentina y América Latina. La premisa: los datos públicos deberían ser comprensibles.
+
+Acá transformo bases de datos abiertas en visualizaciones claras y comparables: tendencias, cortes por período, mapas, distribuciones y relaciones entre variables. Cada publicación incluye fuentes y notas metodológicas para que puedas seguir el rastro, replicar el análisis o cuestionarlo.

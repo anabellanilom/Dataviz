@@ -4,20 +4,20 @@
     "href": "index.html",
     "title": "index",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "Data Viz is a website I created to visually explore public data, with a focus on Argentina and Latin America. The premise: public data should be understandable.\nHere, I turn open datasets into clear, comparable visualizations—trends, period breakdowns, maps, distributions, and relationships between variables. Each post includes sources and methodological notes so you can follow the trail, replicate the analysis, or challenge it."
   },
   {
-    "objectID": "index.html#quarto",
-    "href": "index.html#quarto",
+    "objectID": "index.html#what-is-data-viz",
+    "href": "index.html#what-is-data-viz",
     "title": "index",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "Data Viz is a website I created to visually explore public data, with a focus on Argentina and Latin America. The premise: public data should be understandable.\nHere, I turn open datasets into clear, comparable visualizations—trends, period breakdowns, maps, distributions, and relationships between variables. Each post includes sources and methodological notes so you can follow the trail, replicate the analysis, or challenge it."
   },
   {
-    "objectID": "index.html#running-code",
-    "href": "index.html#running-code",
-    "title": "index",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "biblio.html",
+    "href": "biblio.html",
+    "title": "biblio",
+    "section": "",
+    "text": "Bibliography on data visualization with R."
   }
 ]
