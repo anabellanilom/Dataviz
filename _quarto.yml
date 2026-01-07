@@ -30,7 +30,6 @@ website:
         rel: me
       - icon: envelope
         href: mailto:anabella.anilom@gmail.com
-        navbar:
  
   twitter-card:
     card-style: summary_large_image
