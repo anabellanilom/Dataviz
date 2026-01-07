@@ -103,6 +103,46 @@ base_pa <- AmericaLatina %>%
 
 ```
 
+```{r}
+```{r}
+#| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
+#| echo: false
+#| warning: false
+#| fig-cap: "Fuente: Elaboración propia con datos de whogov - dataset"
+#| include: true
+#| fig-width: 14
+#| fig-height: 8
+#| fig-dpi: 300
+
+##Chunk 3
+
+resumen_global <- base_pa %>%
+summarise(
+ministras_total = sum(n_female_total, na.rm = TRUE),
+cargos_totales  = sum(n_total, na.rm = TRUE),
+prop_ministras  = if_else(cargos_totales > 0, ministras_total / cargos_totales, NA_real_),
+prom_pa         = mean(proporcion, na.rm = TRUE),  
+mediana_pa      = median(proporcion, na.rm = TRUE),
+iqr_pa          = IQR(proporcion, na.rm = TRUE),
+n_pais_anio     = n()
+)
+
+resumen_global %>%
+gt() %>%
+cols_label(
+ministras_total = "Total Ministras",
+cargos_totales  = "Cargos totales (suma)",
+prop_ministras  = "Proporción de ministras en todo el período",
+prom_pa         = "Promedio país-año",
+mediana_pa      = "Mediana país-año",
+iqr_pa          = "IQR país-año",
+n_pais_anio     = "N país-año"
+) %>%
+fmt_number(columns = c(ministras_total, cargos_totales, n_pais_anio), decimals = 0) %>%
+fmt_percent(columns = c(prop_ministras, prom_pa, mediana_pa, iqr_pa), decimals = 1) %>%
+tab_header(title = md("**Estadísticas descriptivas de representación de ministras en el período 1966 a 2023**"), subtitle = " Región completa en todo el período")
+```
+```
 
 ```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
