@@ -396,6 +396,9 @@ patchwork + plot_annotation(
 
 ```
 ```{r}
+#| echo: false
+#| warning: false
+#| include: true
 
 base_paMundo <-WhoGovData  %>%
   mutate(year = as.integer(year)) %>%
