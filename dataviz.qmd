@@ -25,7 +25,6 @@ library(ggplot2)
 library(paletteer)
 library(ellmer)
 
-
 ## Leer base whogov
 
 WhoGovData <- read_csv("Data/WhoGov_crosssectional_V3.1.csv")
@@ -103,6 +102,8 @@ base_pa <- AmericaLatina %>%
 
 ```
 
+
+
 ```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
 #| echo: false
@@ -126,34 +127,6 @@ iqr_pa          = IQR(proporcion, na.rm = TRUE),
 n_pais_anio     = n()
 )
 
-resumen_global %>%
-gt() %>%
-cols_label(
-ministras_total = "Total Ministras",
-cargos_totales  = "Cargos totales (suma)",
-prop_ministras  = "Proporción de ministras en todo el período",
-prom_pa         = "Promedio país-año",
-mediana_pa      = "Mediana país-año",
-iqr_pa          = "IQR país-año",
-n_pais_anio     = "N país-año"
-) %>%
-fmt_number(columns = c(ministras_total, cargos_totales, n_pais_anio), decimals = 0) %>%
-fmt_percent(columns = c(prop_ministras, prom_pa, mediana_pa, iqr_pa), decimals = 1) %>%
-tab_header(title = md("**Estadísticas descriptivas de representación de ministras en el período 1966 a 2023**"), subtitle = " Región completa en todo el período")
-
-```
-
-```{r}
-#| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
-#| echo: false
-#| warning: false
-#| fig-cap: "Fuente: Elaboración propia con datos de whogov - dataset"
-#| include: true
-#| fig-width: 14
-#| fig-height: 8
-#| fig-dpi: 300
-
-##Chunk 3
 resumen_global %>%
   gt() %>%
   # Etiquetas
@@ -288,7 +261,7 @@ df <- base_pa %>%
     )
   )
 
-p <- ggplot(df, aes(x = year, y = proporcion)) +
+p2 <- ggplot(df, aes(x = year, y = proporcion)) +
   geom_line() +
   ggiraph::geom_point_interactive(
     aes(
@@ -305,7 +278,7 @@ p <- ggplot(df, aes(x = year, y = proporcion)) +
   ) +
   theme_minimal()
 
-g <- girafe(ggobj = p, width_svg = 9, height_svg = 4)
+g <- girafe(ggobj = p2, width_svg = 9, height_svg = 4)
 
 girafe_options(
   g,
@@ -381,12 +354,11 @@ girafe_options(
 #| fig-cap: "Fuente: Elaboración propia con datos de whogov-dataset"
 #| include: true
 
-
 library(dplyr)
 library(ggplot2)
 library(scales)
 
-base_pa %>%
+p1<- base_pa %>%
   filter(year > 1980) %>%
   mutate(decada = paste0(floor(year / 10) * 10, "s")) %>%
   ggplot(aes(x = decada, y = proporcion, fill = decada)) +   # ✅ CAMBIO 1
@@ -399,10 +371,9 @@ base_pa %>%
     fontface = "bold",
     color = "black"
   ) +
-  labs(
-    title = "Distribución del porcentaje promedio de mujeres en los gabinetes de América Latina por década",
+  labs(title = "América Latina",
     x = "Década",
-    y = "Porcentaje promedio de mujeres"
+    y = "Porcentaje promedio de mujeres en los gabinetes"
   ) +
   scale_y_continuous(labels = percent_format(accuracy = 1)) +
   guides(fill = guide_none(),
@@ -411,5 +382,95 @@ base_pa %>%
 scale_fill_paletteer_d("wesanderson::AsteroidCity3")+
     theme_classic()
 
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| include: true
+
+library(patchwork)
+patchwork<- p1+p2
+patchwork + plot_annotation(
+  title = 'Evolución en el tiempo de la representación de las mujeres en los gabinetes de América Latina')
 
 ```
+```{r}
+
+base_paMundo <-WhoGovData  %>%
+  mutate(year = as.integer(year)) %>%
+  group_by(country_name, year) %>%
+  summarise(
+    n_female_total = sum(n_female_total, na.rm = TRUE),
+    n_total        = sum(n_total,        na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(proporcion = if_else(n_total > 0, n_female_total / n_total, NA_real_))
+
+Prop_mujeresMundo <- WhoGovData %>%
+  mutate(
+    year = as.integer(year),
+    year_country = paste(year, country_name)  # o unite("year_country", year, country_name, sep = " ", remove = FALSE)
+  ) %>%
+  group_by(year_country, year, country_name) %>%
+  summarise(
+    n_female_total = sum(n_female_total, na.rm = TRUE),
+    n_total        = sum(n_total,        na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    proporcion = if_else(n_total > 0, n_female_total / n_total, NA_real_),
+    porcentaje = 100 * proporcion
+  )%>%
+  arrange(country_name)
+
+
+dfmundo <- base_paMundo %>%
+  group_by(year) %>%
+  summarise(proporcion = mean(proporcion, na.rm = TRUE), .groups = "drop") %>%
+  mutate(
+    tooltip_txt = paste0(
+      "Año: ", year,
+      "<br>Proporción: ", percent(proporcion, accuracy = 0.1)
+    )
+  )
+
+## Plot Boxplot décadas en todo el mundo 
+p3<- base_paMundo %>%
+  filter(year > 1980) %>%
+  mutate(decada = paste0(floor(year / 10) * 10, "s")) %>%
+  ggplot(aes(x = decada, y = proporcion, fill = decada)) +   # ✅ CAMBIO 1
+  geom_boxplot(alpha = 0.8) + 
+  stat_summary(
+    fun = mean,
+    geom = "text",
+    aes(label = percent(after_stat(y), accuracy = 1)),
+    vjust = -0.6,
+    fontface = "bold",
+    color = "black"
+  ) +
+  labs(title = "Todo el mundo",
+    x = "Década",
+    y = "Porcentaje promedio de mujeres en los gabinetes"
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  guides(fill = guide_none(),
+         color = guide_none()) +
+ scale_colour_paletteer_d("wesanderson::AsteroidCity3")+
+scale_fill_paletteer_d("wesanderson::AsteroidCity3")+
+    theme_classic()
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| include: true
+
+library(patchwork)
+patchwork<- p3+p1
+patchwork + plot_annotation(
+  title = 'Comparación evolución en el tiempo de la representación de las mujeres en los gabinetes del mundo y de América Latina')
+
+```
+```
+

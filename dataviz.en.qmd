@@ -105,6 +105,7 @@ base_pa <- AmericaLatina %>%
 
 ```
 
+
 ```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
 #| echo: false
@@ -129,17 +130,75 @@ n_pais_anio     = n()
 )
 
 resumen_global %>%
-gt() %>%
-cols_label(
-ministras_total = "Total Ministras",
-cargos_totales  = "Cargos totales (suma)",
-prop_ministras  = "Proporción de ministras en todo el período",
-prom_pa         = "Promedio país-año",
-mediana_pa      = "Mediana país-año",
-iqr_pa          = "IQR país-año",
-n_pais_anio     = "N país-año"
-) %>%
-fmt_number(columns = c(ministras_total, cargos_totales, n_pais_anio), decimals = 0) %>%
-fmt_percent(columns = c(prop_ministras, prom_pa, mediana_pa, iqr_pa), decimals = 1) %>%
-tab_header(title = md("**Estadísticas descriptivas de representación de ministras en el período 1966 a 2023**"), subtitle = " Región completa en todo el período")
+  gt() %>%
+  # Etiquetas
+  cols_label(
+    ministras_total = "Total ministras",
+    cargos_totales  = "Cargos totales",
+    prop_ministras  = "Proporción global",
+    prom_pa         = "Promedio país-año",
+    mediana_pa      = "Mediana país-año",
+    iqr_pa          = "IQR país-año",
+    n_pais_anio     = "N (país-año)"
+  ) %>%
+  # Agrupar columnas (se ve MUCHO más prolijo)
+  tab_spanner(
+    label = "Conteos",
+    columns = c(ministras_total, cargos_totales, n_pais_anio)
+  ) %>%
+  tab_spanner(
+    label = "Distribución (país-año)",
+    columns = c(prom_pa, mediana_pa, iqr_pa)
+  ) %>%
+  tab_spanner(
+    label = "Indicador clave",
+    columns = c(prop_ministras)
+  ) %>%
+  # Formatos numéricos
+  fmt_integer(columns = c(ministras_total, cargos_totales, n_pais_anio)) %>%
+  fmt_number(columns = c(ministras_total, cargos_totales, n_pais_anio), sep_mark = ".", dec_mark = ",") %>%
+  fmt_percent(columns = c(prop_ministras, prom_pa, mediana_pa, iqr_pa), decimals = 1) %>%
+  # Alineación + ancho (tabla “respira”)
+  cols_align(align = "center", columns = everything()) %>%
+  cols_width(
+    everything() ~ px(150),
+    prop_ministras ~ px(170)
+  ) %>%
+  # Header + fuente (más editorial)
+  tab_header(
+    title = md("**Estadísticas descriptivas de ministras (1966–2023)**"),
+    subtitle = md("Región completa — resumen global del período")
+  ) %>%
+  # Estilo general: limpio y consistente
+  opt_table_outline() %>%
+  opt_row_striping() %>%
+  tab_options(
+    table.font.names = c("Source Sans 3", "Source Sans Pro", "Arial"),
+    table.font.size = px(14),
+    heading.title.font.size = px(18),
+    heading.subtitle.font.size = px(13),
+    table.border.top.style = "solid",
+    table.border.top.width = px(2),
+    table.border.top.color = "gray80",
+    table.border.bottom.style = "solid",
+    table.border.bottom.width = px(2),
+    table.border.bottom.color = "gray80",
+    data_row.padding = px(10),
+    column_labels.padding = px(10)
+  ) %>%
+  # Resaltar el indicador clave
+  tab_style(
+    style = list(
+      cell_fill(color = "#F3F6FF"),
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(columns = prop_ministras)
+  ) %>%
+  # Fuente como nota (mejor que fig-cap para tablas)
+  tab_source_note(
+    source_note = md("**Fuente:** Elaboración propia con datos de *WhoGov*.")
+  )
+
 ```
+
+

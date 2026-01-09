@@ -4,4 +4,4 @@ format: html
 editor: visual
 ---
 
-## Bibliography on data visualization with R. 
+## Bibliography on data visualization with R.
