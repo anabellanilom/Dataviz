@@ -1,14 +1,14 @@
 ---
-title: "Exploración"
+title: "Género y gabinetes"
 format: html
 editor: visual
 ---
 
-## Exploración de datos sobre representación de género en los gabinetes. 
+## Exploración de datos sobre representación de género en los gabinetes
 
 -   Nuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de <https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/>
 
-## Representación de las mujeres en los gabinetes del mundo.
+## Datos sobre representación de las mujeres en los gabinetes del mundo entre 1966 y 2023
 
 ```{r}
 #| echo: false
@@ -101,8 +101,6 @@ base_pa <- AmericaLatina %>%
   mutate(proporcion = if_else(n_total > 0, n_female_total / n_total, NA_real_))
 
 ```
-
-
 
 ```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
@@ -240,6 +238,8 @@ resumen_anual %>%
   )
 ```
 
+## Datos sobre América Latina 
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -373,7 +373,7 @@ p1<- base_pa %>%
   ) +
   labs(title = "América Latina",
     x = "Década",
-    y = "Porcentaje promedio de mujeres en los gabinetes"
+    y = "Porcentaje de ministras"
   ) +
   scale_y_continuous(labels = percent_format(accuracy = 1)) +
   guides(fill = guide_none(),
@@ -390,11 +390,12 @@ scale_fill_paletteer_d("wesanderson::AsteroidCity3")+
 #| include: true
 
 library(patchwork)
-patchwork<- p1+p2
+patchwork<- p1 / p2
 patchwork + plot_annotation(
   title = 'Evolución en el tiempo de la representación de las mujeres en los gabinetes de América Latina')
 
 ```
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -475,5 +476,5 @@ patchwork + plot_annotation(
   title = 'Comparación evolución en el tiempo de la representación de las mujeres en los gabinetes del mundo y de América Latina')
 
 ```
-```
 
+\`\`\`
