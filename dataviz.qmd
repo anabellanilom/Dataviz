@@ -238,7 +238,7 @@ resumen_anual %>%
   )
 ```
 
-## Datos sobre América Latina 
+## Datos sobre América Latina
 
 ```{r}
 #| echo: false
@@ -477,4 +477,11 @@ patchwork + plot_annotation(
 
 ```
 
-\`\`\`
+## Comparación base de WhoGov y base de datos de elaboración propia
+
+```{r}
+
+library(readr)
+BaseDefinitiva <- read_csv("Data/BaseDefinitiva.csv")
+View(BaseDefinitiva)
+```
