@@ -24,6 +24,13 @@ library(gt)
 library(ggplot2)
 library(paletteer)
 library(ellmer)
+library(showtext)
+library(sysfonts)
+
+font_add_google("Inter", "Inter")
+showtext_auto()
+
+p + theme(text = element_text(family = "Inter"))
 
 ## Leer base whogov
 
@@ -278,6 +285,8 @@ p2 <- ggplot(df, aes(x = year, y = proporcion)) +
   ) +
   theme_minimal()
 
+p2 + theme(text = element_text(family = "Inter"))
+
 g <- girafe(ggobj = p2, width_svg = 9, height_svg = 4)
 
 girafe_options(
@@ -480,6 +489,9 @@ patchwork + plot_annotation(
 ## Comparación base de WhoGov y base de datos de elaboración propia
 
 ```{r}
+#| echo: false
+#| warning: false
+#| include: false
 
 library(readr)
 BaseDefinitiva <- read_csv("Data/BaseDefinitiva.csv")

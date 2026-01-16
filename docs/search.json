@@ -21,27 +21,6 @@
     "text": "Nuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/"
   },
   {
-    "objectID": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
-    "href": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
-    "title": "Exploración",
-    "section": "",
-    "text": "Nuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/"
-  },
-  {
-    "objectID": "dataviz.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
-    "href": "dataviz.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
-    "title": "Exploración",
-    "section": "Representación de las mujeres en los gabinetes del mundo.",
-    "text": "Representación de las mujeres en los gabinetes del mundo.\n\n\n\n\n\n\n\n\nEstadísticas descriptivas de ministras (1966–2023)\n\n\nRegión completa — resumen global del período\n\n\n\nConteos\n\n\nIndicador clave\n\n\nDistribución (país-año)\n\n\n\nTotal ministras\nCargos totales\nN (país-año)\nProporción global\nPromedio país-año\nMediana país-año\nIQR país-año\n\n\n\n\n2.622,00\n21.345,00\n1.044,00\n12.3%\n10.5%\n6.7%\n17.2%\n\n\n\nFuente: Elaboración propia con datos de WhoGov.\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov - dataset\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
-  },
-  {
-    "objectID": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
-    "href": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
-    "title": "Género y gabinetes",
-    "section": "Porcentaje de ministras en América Latina. 1980-2023",
-    "text": "Porcentaje de ministras en América Latina. 1980-2023\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
-  },
-  {
     "objectID": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes",
     "href": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes",
     "title": "Género y gabinetes",
@@ -60,41 +39,20 @@
     "href": "dataviz.html#datos-sobre-américa-latina",
     "title": "Género y gabinetes",
     "section": "Datos sobre América Latina",
-    "text": "Datos sobre América Latina\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
+    "text": "Datos sobre América Latina\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
+  },
+  {
+    "objectID": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
+    "href": "dataviz.html#porcentaje-de-ministras-en-américa-latina.-1980-2023",
+    "title": "Género y gabinetes",
+    "section": "Porcentaje de ministras en América Latina. 1980-2023",
+    "text": "Porcentaje de ministras en América Latina. 1980-2023\n\n\n\n\nFuente: Elaboración propia con datos de whogov-dataset"
   },
   {
     "objectID": "dataviz.html#comparación-base-de-whogov-y-base-de-datos-de-elaboración-propia",
     "href": "dataviz.html#comparación-base-de-whogov-y-base-de-datos-de-elaboración-propia",
     "title": "Género y gabinetes",
     "section": "Comparación base de WhoGov y base de datos de elaboración propia",
-    "text": "Comparación base de WhoGov y base de datos de elaboración propia\n\nlibrary(readr)\nBaseDefinitiva &lt;- read_csv(\"Data/BaseDefinitiva.csv\")\n\nRows: 42 Columns: 18\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): C_NY, presi_Nomb, Party\ndbl (15): id, anio, muj_gab, GPSCN, Demo, MUJCONG, ideología, presi_gen, PSI...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nView(BaseDefinitiva)"
-  },
-  {
-    "objectID": "index.en.html",
-    "href": "index.en.html",
-    "title": "index",
-    "section": "",
-    "text": "Data Viz is a website I created to visually explore public data, with a focus on Argentina and Latin America. The premise: public data should be understandable.\nHere, I turn open datasets into clear, comparable visualizations—trends, period breakdowns, maps, distributions, and relationships between variables. Each post includes sources and methodological notes so you can follow the trail, replicate the analysis, or challenge it."
-  },
-  {
-    "objectID": "index.en.html#what-is-data-viz",
-    "href": "index.en.html#what-is-data-viz",
-    "title": "index",
-    "section": "",
-    "text": "Data Viz is a website I created to visually explore public data, with a focus on Argentina and Latin America. The premise: public data should be understandable.\nHere, I turn open datasets into clear, comparable visualizations—trends, period breakdowns, maps, distributions, and relationships between variables. Each post includes sources and methodological notes so you can follow the trail, replicate the analysis, or challenge it."
-  },
-  {
-    "objectID": "dataviz.en.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
-    "href": "dataviz.en.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
-    "title": "Gender and cabinets",
-    "section": "Exploración de datos sobre representación de género en los gabinetes.",
-    "text": "Exploración de datos sobre representación de género en los gabinetes.\n\nNuffield Politics Research Centre. (s. f.). WhoGov dataset. Nuffield College, University of Oxford. Recuperado el 3 de enero de 2026, de https://politicscentre.nuffield.ox.ac.uk/whogov-dataset/"
-  },
-  {
-    "objectID": "dataviz.en.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
-    "href": "dataviz.en.html#representación-de-las-mujeres-en-los-gabinetes-del-mundo.",
-    "title": "Gender and cabinets",
-    "section": "Representación de las mujeres en los gabinetes del mundo.",
-    "text": "Representación de las mujeres en los gabinetes del mundo.\n\n\n\n\n\n\n\n\nEstadísticas descriptivas de ministras (1966–2023)\n\n\nRegión completa — resumen global del período\n\n\n\nConteos\n\n\nIndicador clave\n\n\nDistribución (país-año)\n\n\n\nTotal ministras\nCargos totales\nN (país-año)\nProporción global\nPromedio país-año\nMediana país-año\nIQR país-año\n\n\n\n\n2.622,00\n21.345,00\n1.044,00\n12.3%\n10.5%\n6.7%\n17.2%\n\n\n\nFuente: Elaboración propia con datos de WhoGov.\n\n\n\n\n\n\nFuente: Elaboración propia con datos de whogov - dataset"
+    "text": "Comparación base de WhoGov y base de datos de elaboración propia"
   }
 ]
