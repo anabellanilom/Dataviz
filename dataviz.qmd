@@ -27,11 +27,6 @@ library(ellmer)
 library(showtext)
 library(sysfonts)
 
-font_add_google("Inter", "Inter")
-showtext_auto()
-
-p + theme(text = element_text(family = "Inter"))
-
 ## Leer base whogov
 
 WhoGovData <- read_csv("Data/WhoGov_crosssectional_V3.1.csv")
