@@ -14,7 +14,7 @@ editor: visual
 #| echo: false
 #| warning: false
 #| include: false
-## Chunk 1
+
 library (tidyverse)
 library(readr)
 library (dplyr)
@@ -26,7 +26,7 @@ library(paletteer)
 library(ellmer)
 library(showtext)
 library(sysfonts)
-
+library(ggtext)
 ## Leer base whogov
 
 WhoGovData <- read_csv("Data/WhoGov_crosssectional_V3.1.csv")
@@ -398,6 +398,39 @@ patchwork<- p1 / p2
 patchwork + plot_annotation(
   title = 'Evolución en el tiempo de la representación de las mujeres en los gabinetes de América Latina')
 
+
+library(patchwork)
+library(ggtext)
+
+patchwork <- p1 / p2
+
+patchwork +
+  plot_annotation(
+    title = paste0(
+      "<span style='font-size:18pt; font-weight:700;'>",
+      "Evolución en el tiempo de la representación de las mujeres",
+      "</span><br>",
+      "<span style='font-size:18pt; font-weight:700;'>",
+      "en los gabinetes de América Latina",
+      "</span>"
+    ),
+    theme = theme_minimal(base_size = 11) +
+      theme(
+        plot.title = ggtext::element_markdown(
+          margin = margin(b = 6),
+          lineheight = 1.1
+        ),
+        plot.subtitle = ggtext::element_markdown(
+          margin = margin(b = 10),
+          lineheight = 1.1
+        ),
+        plot.caption = ggtext::element_markdown(
+          margin = margin(t = 10)
+        )
+      )
+  )
+
+
 ```
 
 ```{r}
@@ -486,9 +519,244 @@ patchwork + plot_annotation(
 ```{r}
 #| echo: false
 #| warning: false
-#| include: false
+#| include: true
 
-library(readr)
-BaseDefinitiva <- read_csv("Data/BaseDefinitiva.csv")
-View(BaseDefinitiva)
+library(dplyr)
+library(scales)
+library(ggplot2)
+library(ggiraph)
+library(readxl)
+
+# Cargar datos desde Excel
+base_min <- read_excel("Base_Ministres AL.xlsx")
+
+# Agrupar por año y calcular proporción promedio
+df <- base_min %>%
+  group_by(anio) %>%
+  summarise(
+    proporcion = mean(muj_gab, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    tooltip_txt = paste0(
+      "Año: ", anio,
+      "<br>P: ", percent(proporcion, accuracy = 0.1)
+    )
+  )
+
+# Crear gráfico interactivo
+p2 <- ggplot(df, aes(x = anio, y = proporcion)) +
+  geom_line() +
+  ggiraph::geom_point_interactive(
+    aes(
+      tooltip = tooltip_txt,
+      data_id = anio
+    ),
+    size = 2
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Porcentaje de ministras en los gabinetes de 18 países de América Latina",
+    subtitle = "2000–2025",
+    x = "Año", y = "Porcentaje de ministras"
+  ) +
+  theme_minimal()
+
+p2 <- p2 + theme(text = element_text(family = "Inter"))
+
+# Crear objeto interactivo
+g <- girafe(ggobj = p2, width_svg = 9, height_svg = 4)
+
+# Opciones interactivas
+girafe_options(
+  g,
+  opts_hover(css = "fill-opacity:1; r:4;"),
+  opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
+  opts_zoom(min = 1, max = 5)
+)
+
 ```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| include: true
+
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(scales)
+
+# Leer base
+base_min <- read_excel("Base_Ministres AL.xlsx")
+
+p1 <- base_min %>%
+  mutate(decada = paste0(floor(anio / 10) * 10, "s")) %>%
+  ggplot(aes(x = decada, y = muj_gab, fill = decada)) +
+  
+  geom_boxplot(alpha = 0.8) +
+  
+  stat_summary(
+    fun = mean,
+    geom = "text",
+    aes(
+      y = muj_gab,
+      label = scales::percent(after_stat(y), accuracy = 1)
+    ),
+    vjust = -0.6,
+    fontface = "bold",
+    color = "black"
+  ) +
+  
+  labs(
+    title = "América Latina",
+    x = "Década",
+    y = "Porcentaje de ministras"
+  ) +
+  
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  theme_classic() +
+  theme(legend.position = "none")
+
+print(p1)
+
+
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| include: true
+
+library(dplyr)
+library(scales)
+library(ggplot2)
+library(ggiraph)
+library(readxl)
+
+# Leer los datos
+base_min <- read_excel("Base_Ministres AL.xlsx")
+
+# Agrupar por país y año, y calcular proporción promedio
+df <- base_min %>%
+  group_by(pais, anio) %>%
+  summarise(
+    proporcion = mean(muj_gab, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    tooltip_txt = paste0(
+      "País: ", pais,
+      "<br>Año: ", anio,
+      "<br>Proporción: ", percent(proporcion, accuracy = 0.1)
+    )
+  )
+
+# Crear gráfico interactivo con facet_wrap por país
+p2 <- ggplot(df, aes(x = anio, y = proporcion)) +
+  geom_line() +
+  ggiraph::geom_point_interactive(
+    aes(
+      tooltip = tooltip_txt,
+      data_id = paste(pais, anio, sep = "_")
+    ),
+    size = 2
+  ) +
+  facet_wrap(~ pais) +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Porcentaje de ministras en los gabinetes de América Latina",
+    subtitle = "2000–2025",
+    x = "Año", y = "Porcentaje de ministras"
+  ) +
+  theme_minimal() +
+  theme(
+    text = element_text(family = "Inter"),
+    strip.text = element_text(face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+# Crear objeto interactivo
+g <- girafe(ggobj = p2, width_svg = 10, height_svg = 7)
+
+# Configurar interactividad
+girafe_options(
+  g,
+  opts_hover(css = "fill-opacity:1; r:4;"),
+  opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
+  opts_zoom(min = 1, max = 5)
+)
+
+```
+```{r}
+#| echo: false
+#| warning: false
+#| include: true
+
+library(dplyr)
+library(scales)
+library(ggplot2)
+library(ggiraph)
+library(readxl)
+
+# Leer los datos
+base_min <- read_excel("Base_Ministres AL.xlsx")
+
+# Agrupar por país y año
+df <- base_min %>%
+  group_by(pais, anio) %>%
+  summarise(
+    proporcion = mean(muj_gab, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    tooltip_txt = paste0(
+      "País: ", pais,
+      "<br>Año: ", anio,
+      "<br>Proporción: ", percent(proporcion, accuracy = 0.1)
+    )
+  )
+
+# Crear gráfico interactivo con línea en 40%
+p2 <- ggplot(df, aes(x = anio, y = proporcion)) +
+  geom_line() +
+  ggiraph::geom_point_interactive(
+    aes(
+      tooltip = tooltip_txt,
+      data_id = paste(pais, anio, sep = "_")
+    ),
+    size = 2
+  ) +
+  geom_hline(yintercept = 0.4, linetype = "dashed", color = "red", linewidth = 0.5) +  # 🔴 Línea del 40%
+  facet_wrap(~ pais) +
+  scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +
+  labs(
+    title = "Porcentaje de ministras en los gabinetes de América Latina",
+    subtitle = "2000–2025. Línea roja indica el umbral del 40%",
+    x = "Año", y = "Porcentaje de ministras"
+  ) +
+  theme_minimal() +
+  theme(
+    text = element_text(family = "Inter"),
+    strip.text = element_text(face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+# Crear objeto interactivo
+g <- girafe(ggobj = p2, width_svg = 10, height_svg = 7)
+
+# Opciones interactivas
+girafe_options(
+  g,
+  opts_hover(css = "fill-opacity:1; r:4;"),
+  opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
+  opts_zoom(min = 1, max = 5)
+)
+
+
+
+```
+
