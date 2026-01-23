@@ -204,7 +204,6 @@ resumen_global %>%
 #| warning: false
 #| include: false
 
-##Chunck 4
 # 1) Resumen por año
 resumen_anual <- base_pa %>%
   group_by(year) %>%
@@ -248,8 +247,6 @@ resumen_anual %>%
 #| fig-cap: "Fuente: Elaboración propia con datos de whogov-dataset"
 #| include: true
 
-## Chunk 5
-
 library(ggiraph)
 library(scales)
 
@@ -291,7 +288,6 @@ girafe_options(
   opts_zoom(min = 1, max = 5)
 )
 
-
 ```
 
 ## Porcentaje de ministras en América Latina. 1980-2023
@@ -305,7 +301,7 @@ girafe_options(
 #| fig-height: 8
 #| fig-dpi: 300
 
-##Chunk 7
+
 
 library(dplyr)
 library(ggplot2)
@@ -730,7 +726,7 @@ p2 <- ggplot(df, aes(x = anio, y = proporcion)) +
     ),
     size = 2
   ) +
-  geom_hline(yintercept = 0.4, linetype = "dashed", color = "red", linewidth = 0.5) +  # 🔴 Línea del 40%
+  geom_hline(yintercept = 0.45, linetype = "dashed", color = "red", linewidth = 0.5) +  # 🔴 Línea del 40%
   facet_wrap(~ pais) +
   scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +
   labs(
