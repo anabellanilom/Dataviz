@@ -61,7 +61,6 @@ setdiff(codigos, unique(WhoGovData$country_isocode))
 #| warning: false
 #| include: false
 
-## Chunck 2
 #Proporción de mujeres
 Prop_mujeres <- AmericaLatina %>%
   mutate(
@@ -113,8 +112,6 @@ base_pa <- AmericaLatina %>%
 #| fig-width: 14
 #| fig-height: 8
 #| fig-dpi: 300
-
-##Chunk 3
 
 resumen_global <- base_pa %>%
 summarise(
@@ -301,8 +298,6 @@ girafe_options(
 #| fig-height: 8
 #| fig-dpi: 300
 
-
-
 library(dplyr)
 library(ggplot2)
 library(ggiraph)
@@ -390,12 +385,6 @@ scale_fill_paletteer_d("wesanderson::AsteroidCity3")+
 #| include: true
 
 library(patchwork)
-patchwork<- p1 / p2
-patchwork + plot_annotation(
-  title = 'Evolución en el tiempo de la representación de las mujeres en los gabinetes de América Latina')
-
-
-library(patchwork)
 library(ggtext)
 
 patchwork <- p1 / p2
@@ -425,7 +414,6 @@ patchwork +
         )
       )
   )
-
 
 ```
 
