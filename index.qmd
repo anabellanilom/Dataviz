@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-## ¿Qué es Data Viz? 
+## ¿Qué es Data Viz?
 
 Data Viz es un sitio creado por mí para explorar visualmente datos públicos, con foco en Argentina y América Latina. La premisa: los datos públicos deberían ser comprensibles.
 
