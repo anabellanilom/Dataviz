@@ -1,7 +1,9 @@
 ---
-title: "biblio"
+title: "Recomendados"
 format: html
 editor: visual
 ---
 
-## Bibliografía sobre visualización de datos con R.
+## Bibliografía y sitios web recomendados sobre visualización de datos con R.
+
+-   <https://www.dataviz-inspiration.com/>

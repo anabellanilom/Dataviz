@@ -274,11 +274,11 @@ p2 <- ggplot(df, aes(x = year, y = proporcion)) +
   ) +
   theme_minimal()
 
-#p2 + theme(text = element_text(family = "Inter"))
+p2 + theme(text = element_text(family = "Inter"))
 
 g <- girafe(ggobj = p2, width_svg = 9, height_svg = 4)
 
-girafe_options(
+g<-girafe_options(
   g,
   opts_hover(css = "fill-opacity:1; r:4;"),
   opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
@@ -333,7 +333,7 @@ p <- ggplot(df, aes(x = year, y = proporcion, group = country_name)) +
 
 g <- girafe(ggobj = p, width_svg = 10, height_svg = 7)
 
-girafe_options(
+g <- girafe_options(
   g,
   opts_hover(css = "fill-opacity:1; r:4;"),
   opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
@@ -552,7 +552,7 @@ p2 <- p2 + theme(text = element_text(family = "Inter"))
 g <- girafe(ggobj = p2, width_svg = 9, height_svg = 4)
 
 # Opciones interactivas
-girafe_options(
+g<-girafe_options(
   g,
   opts_hover(css = "fill-opacity:1; r:4;"),
   opts_tooltip(css = "background-color:white; padding:6px; border-radius:6px;"),
@@ -686,7 +686,7 @@ library(ggiraph)
 library(readxl)
 
 # Leer los datos
-base_min <- read_excel("Base_Ministres AL.xlsx")
+base_min <- read_excel("data/Base_Ministres AL.xlsx")
 
 # Agrupar por país y año
 df <- base_min %>%
