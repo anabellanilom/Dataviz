@@ -105,7 +105,6 @@ base_pa <- AmericaLatina %>%
 
 ```
 
-
 ```{r}
 #| title: Estadísticas descriptivas de ministras en el período 1966 a 2023
 #| echo: false
@@ -200,5 +199,3 @@ resumen_global %>%
   )
 
 ```
-
-

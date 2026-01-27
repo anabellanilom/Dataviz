@@ -4,6 +4,12 @@ format: html
 editor: visual
 ---
 
-## Bibliografía y sitios web recomendados sobre visualización de datos con R.
+## Bibliografía y sitios web recomendados sobre visualización de datos con R
+
+### Sitios web 
 
 -   <https://www.dataviz-inspiration.com/>
+
+### Libros 
+
+-   Fernández-Avilés, G., & Montero, J.-M. (Eds.). (2024). *Fundamentos de ciencia de datos con R*. McGraw-Hill Interamericana de España S. L. [https://cdr-book.github.io/](https://cdr-book.github.io/?utm_source=chatgpt.com)

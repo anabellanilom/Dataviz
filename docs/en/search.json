@@ -14,6 +14,20 @@
     "text": "Data Viz is a website I created to visually explore public data, with a focus on Argentina and Latin America. The premise: public data should be understandable.\nHere, I turn open datasets into clear, comparable visualizations—trends, period breakdowns, maps, distributions, and relationships between variables. Each post includes sources and methodological notes so you can follow the trail, replicate the analysis, or challenge it."
   },
   {
+    "objectID": "biblio.html",
+    "href": "biblio.html",
+    "title": "biblio",
+    "section": "",
+    "text": "https://www.dataviz-inspiration.com/\n\n\n\n\nFernández-Avilés, G., & Montero, J.-M. (Eds.). (2024). Fundamentos de ciencia de datos con R. McGraw-Hill Interamericana de España S. L. https://cdr-book.github.io/"
+  },
+  {
+    "objectID": "biblio.html#bibliography-and-recommended-websites-on-data-visualization-with-r",
+    "href": "biblio.html#bibliography-and-recommended-websites-on-data-visualization-with-r",
+    "title": "biblio",
+    "section": "",
+    "text": "https://www.dataviz-inspiration.com/\n\n\n\n\nFernández-Avilés, G., & Montero, J.-M. (Eds.). (2024). Fundamentos de ciencia de datos con R. McGraw-Hill Interamericana de España S. L. https://cdr-book.github.io/"
+  },
+  {
     "objectID": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
     "href": "dataviz.html#exploración-de-datos-sobre-representación-de-género-en-los-gabinetes.",
     "title": "Gender and cabinets",
